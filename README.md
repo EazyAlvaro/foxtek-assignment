@@ -64,7 +64,7 @@ it typically runs on port 8000, if you already have something running there it w
 [Thu Jun 20 17:41:06 2019] Failed to listen on 127.0.0.1:8000 (reason: Address already in use)
 Laravel development server started: <http://127.0.0.1:8001>
 ```
-You may have to adjust `xkxd/tests/api.suite.yml` to match accordingly.
+You may have to adjust `xkcd/tests/api.suite.yml` to match accordingly.
 
 You should now be able to browse to `http://localhost:8000/api/space/year/2013/limit/2` and see:
 
