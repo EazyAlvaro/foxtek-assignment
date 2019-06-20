@@ -1,18 +1,17 @@
 <?php
 
-namespace App\Console\Commands;
+namespace App\Modules\Xkcd;
 
 use Illuminate\Console\Command;
-use App\Modules\Space\SpaceService;
 
-class ImportSpace extends Command
+class ImportXkcdCommand extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'import:space';
+    protected $signature = 'import:xkcd';
 
     /**
      * The console command description.
@@ -38,7 +37,7 @@ class ImportSpace extends Command
      */
     public function handle()
     {
-        $service = new SpaceService();
-		$service->import();
+        $service = new XkcdService();
+        $service->import();
     }
 }
