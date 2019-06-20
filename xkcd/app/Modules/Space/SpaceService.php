@@ -35,9 +35,7 @@ class SpaceService
 		// Statuscode checking intentionally omitted, this is demo code
 
 		$client = new GuzzleHttp\Client();
-		$res = $client->request('GET', $this->target, [
-			//'auth' => ['user', 'pass']
-		]);
+		$res = $client->request('GET', $this->target, []);
 		return json_decode($res->getBody(), true);
 	}
 
