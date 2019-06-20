@@ -16,7 +16,15 @@ class Content extends Model
 		'details'
 	];
 
+    protected $hidden = [
+    	'created_at',
+		'updated_at',
+		'id',
+		'year',
+		'source'
+	];
+
     protected $casts = [
-    	'date' => 'date'
+    	'date' => 'date:Y-m-d'
 	];
 }

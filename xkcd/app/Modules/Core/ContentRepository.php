@@ -15,7 +15,7 @@ class ContentRepository
 	 */
 	public static function insertMany(Collection $collection)
 	{
-		$collection->each(function(array $record){
+		$collection->each(function (array $record) {
 			Content::firstOrCreate(
 				[
 					'source' => $record['source'],
@@ -24,5 +24,24 @@ class ContentRepository
 				$record
 			);
 		});
+	}
+
+	/**
+	 * Fetch Content records by the listed params, ordered ASC by number
+	 *
+	 * @param $source
+	 * @param $year
+	 * @param $limit
+	 *
+	 * @return Collection
+	 */
+	public static function get($source, $year, $limit): Collection
+	{
+		return Content::where([
+			'source' => $source,
+			'year' => $year
+		])->orderBy('number', 'asc')
+			->take($limit)
+			->get();
 	}
 }
