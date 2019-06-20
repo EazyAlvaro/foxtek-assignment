@@ -3,8 +3,9 @@ class_name: ApiTester
 modules:
     enabled:
     - REST:
-          url: /api/v1
+        url: /api
           depends: Laravel5
+        port: 8000 # because we're using `artisan serve`
     - \Helper\Api
     config:
     - Laravel5:
