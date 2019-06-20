@@ -27,7 +27,7 @@ class XkcdService
 	{
 		$done = false;
 
-		$last = ContentRepository::getLatest('xkcd');
+		$last = ContentRepository::getLatest('comics');
 		$nextId = $last ? $last->number + 1 : 1;
 
 		do {
@@ -35,7 +35,7 @@ class XkcdService
 				$data = $this->getData($nextId);
 
 				$record = [
-					'source' => 'xkcd',
+					'source' => 'comics',
 					'year' => $data['year'],
 					'number' => $data['num'],
 					'date' => Carbon::createFromDate($data['year'], $data['month'], $data['day']),
